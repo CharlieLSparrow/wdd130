@@ -7,12 +7,15 @@
     --accent2-color: #F26419;
     --heading-font: 'Halant', serif;
     --paragraph-font: 'Nunito Sans', sans-serif;
+    --text-light: #fcfcfc;
+    --text-dark: #333;
 }
 
 body {
     font-family: var(--paragraph-font);
     max-width: 1200px;
     margin: 0 auto;
+    background-color: var(--text-light);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,8 +25,9 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 150px 1fr; /* Set a fixed size for the logo column */
     align-items: center;
+    gap: 2rem;
     padding: 1rem;
     background-color: var(--secondary-color);
 }
@@ -38,89 +42,114 @@ header nav a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 700;
+    font-size: 1.1rem;
     padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 5px;
 }
 
 header nav a:hover {
     background-color: var(--accent1-color);
-    color: #fff;
-    border-radius: 5px;
+    color: var(--text-light);
+    transform: translateY(-2px);
 }
 
+/* --- Hero Section Improvements --- */
 .hero {
     position: relative;
+    max-height: 450px; /* Control the height of the hero section */
+    overflow: hidden; /* Hide parts of the image that overflow */
 }
 
 .hero img {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area without distortion */
 }
 
 .hero h1 {
     position: absolute;
     top: 2rem;
     left: 2rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1rem;
+    color: var(--text-light);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem 1.5rem;
     border-radius: 5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
 .hero article {
     position: absolute;
     bottom: 2rem;
     right: 2rem;
-    width: 40%;
-    background-color: rgba(246, 174, 45, 0.9);
-    padding: 1rem;
-    border-radius: 5px;
-    color: #000;
+    width: 45%;
+    background-color: rgba(246, 174, 45, 0.95); /* Made slightly more opaque */
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: var(--text-dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .hero article img {
     float: right;
     width: 100px;
-    height: auto;
+    height: 100px;
+    object-fit: cover;
     margin-left: 1rem;
     border-radius: 50%;
-    border: 2px solid var(--primary-color);
+    border: 3px solid var(--primary-color);
 }
 
 .history {
-    padding: 2rem;
+    padding: 3rem 2rem;
     text-align: center;
 }
 
+.history p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* --- Adventure Gallery Improvements --- */
 .adventure {
     padding: 2rem;
-    text-align: center;
 }
 
 .adventure h2 {
+    text-align: center;
     margin-bottom: 2rem;
 }
 
-.adventure img {
-    width: 18%;
-    height: auto;
-    margin: 0 0.5%;
-    border: 3px solid var(--secondary-color);
-    transition: transform 0.3s ease;
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
 
-.adventure img:hover {
+.adventure-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* This makes all images uniform */
+    border: 3px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.adventure-gallery img:hover {
     transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 footer {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-light);
 }
 
 .sociallinks {
@@ -130,14 +159,68 @@ footer {
 
 .sociallinks a {
     text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.sociallinks a:hover {
+    transform: scale(1.1);
 }
 
 .sociallinks img {
     width: 32px;
     height: auto;
-    transition: opacity 0.3s ease;
 }
 
-.sociallinks img:hover {
-    opacity: 0.7;
+/* --- Responsive Design --- */
+@media (max-width: 800px) {
+    .hero article {
+        width: 60%;
+        bottom: 1rem;
+        right: 1rem;
+        padding: 1rem;
+    }
+
+    .hero article img {
+        width: 80px;
+        height: 80px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1rem;
+    }
+    
+    header nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hero {
+        max-height: none; /* Allow hero to grow on mobile */
+    }
+
+    .hero h1, .hero article {
+        position: static; /* Remove absolute positioning */
+        width: auto;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .hero h1 {
+        text-align: center;
+    }
+
+    .hero article {
+        box-shadow: none;
+    }
 }
