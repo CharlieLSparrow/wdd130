@@ -88,20 +88,16 @@ header nav a:hover {
     border-radius: 8px;
     color: var(--text-dark);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    /* --- FIX: Use Flexbox for alignment --- */
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
 
 .hero article img {
-    /* --- FIX: Remove the float property --- */
+    float: right; /* Reverted to float to meet rubric requirements */
+    margin-left: 1rem; /* Added margin for spacing */
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--primary-color);
-    flex-shrink: 0; /* Prevents image from shrinking */
 }
 
 .history {
