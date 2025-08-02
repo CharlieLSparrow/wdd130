@@ -88,20 +88,20 @@ header nav a:hover {
     border-radius: 8px;
     color: var(--text-dark);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    /* Flexbox styles to fix the layout */
+    /* --- FIX: Use Flexbox for alignment --- */
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
 .hero article img {
-    /* The float is no longer needed */
+    /* --- FIX: Remove the float property --- */
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--primary-color);
-    flex-shrink: 0; /* Prevents the image from shrinking */
+    flex-shrink: 0; /* Prevents image from shrinking */
 }
 
 .history {
