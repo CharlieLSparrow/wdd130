@@ -1,26 +1,20 @@
 body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-family: sans-serif;
   max-width: 960px;
   margin: 0 auto;
-  background-color: #f4f7f6;
-  color: #333;
-}
-
-header {
-    background-color: #005a5a;
-    padding: 0.5rem 0;
 }
 
 nav {
-  text-align: center;
+    background-color: #005a5a;
+    padding: 1rem;
+    text-align: center;
 }
 
 nav a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 1rem 1.5rem;
-  display: inline-block;
-  transition: background-color 0.3s ease;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem;
 }
 
 nav a:hover {
@@ -29,13 +23,8 @@ nav a:hover {
 }
 
 main {
-  padding: 1.5rem;
-}
-
-main h1 {
-    color: #005a5a;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 0.5rem;
+  padding: 1rem;
+  max-width: 800px;
 }
 
 main img {
@@ -51,29 +40,22 @@ p {
 
 aside {
   width: 250px;
-  margin: 1.5rem;
-  border: 1px solid #b2dfdb;
+  margin: 1rem;
+  border: 1px solid #ccc;
   padding: 1rem;
-  background-color: #e0f2f1;
-  color: #004d40;
-}
-
-aside h2 {
-    color: #005a5a;
+  background-color: #f0f0f0;
+  color: #333;
 }
 
 aside img {
-  width: 100%;
+  width: 200px;
   height: auto;
 }
 
 footer {
-  margin-top: 1.5rem;
-  border-top: 4px solid #ff7f50;
+  margin-top: 1rem;
+  border-top: 1px solid #ccc;
   text-align: center;
-  padding: 1.5rem;
-  background-color: #333;
-  color: #ffffff;
 }
 
 .content-wrapper {
