@@ -1,84 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Halant:wght@600&family=Nunito+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #33658A;
+    --secondary-color: #86BBD8;
+    --accent1-color: #F6AE2D;
+    --accent2-color: #F26419;
+    --heading-font: 'Halant', serif;
+    --paragraph-font: 'Nunito Sans', sans-serif;
+}
+
 body {
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  max-width: 960px;
-  margin: 0 auto;
-  background-color: #f4f7f6;
-  color: #333;
+    font-family: var(--paragraph-font);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
 }
 
 header {
-    background-color: #005a5a;
-    padding: 0.5rem 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--secondary-color);
 }
 
-nav {
-  text-align: center;
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  padding: 1rem 1.5rem;
-  display: inline-block;
-  transition: background-color 0.3s ease;
+header nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
 }
 
-nav a:hover {
-  background-color: #ff7f50;
-  color: #ffffff;
+header nav a:hover {
+    background-color: var(--accent1-color);
+    color: #fff;
+    border-radius: 5px;
 }
 
-main {
-  padding: 1.5rem;
+.hero {
+    position: relative;
 }
 
-main h1 {
-    color: #005a5a;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 0.5rem;
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
-main img {
-  width: 200px;
-  border: 4px solid #ffffff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.hero h1 {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 5px;
 }
 
-p {
-  padding: 0;
-  line-height: 1.6;
+.hero article {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40%;
+    background-color: rgba(246, 174, 45, 0.9);
+    padding: 1rem;
+    border-radius: 5px;
+    color: #000;
 }
 
-aside {
-  width: 250px;
-  margin: 1.5rem;
-  border: 1px solid #b2dfdb;
-  padding: 1rem;
-  background-color: #e0f2f1;
-  color: #004d40;
+.hero article img {
+    float: right;
+    width: 100px;
+    height: auto;
+    margin-left: 1rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
 }
 
-aside h2 {
-    color: #005a5a;
+.history {
+    padding: 2rem;
+    text-align: center;
 }
 
-aside img {
-  width: 100%;
-  height: auto;
+.adventure {
+    padding: 2rem;
+    text-align: center;
+}
+
+.adventure h2 {
+    margin-bottom: 2rem;
+}
+
+.adventure img {
+    width: 18%;
+    height: auto;
+    margin: 0 0.5%;
+    border: 3px solid var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.adventure img:hover {
+    transform: scale(1.05);
 }
 
 footer {
-  margin-top: 1.5rem;
-  border-top: 4px solid #ff7f50;
-  text-align: center;
-  padding: 1.5rem;
-  background-color: #333;
-  color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
 }
 
-.content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1rem;
-  align-items: start;
+.sociallinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.sociallinks a {
+    text-decoration: none;
+}
+
+.sociallinks img {
+    width: 32px;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.sociallinks img:hover {
+    opacity: 0.7;
 }
