@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
     display: grid;
-    grid-template-columns: 150px 1fr; /* Set a fixed size for the logo column */
+    grid-template-columns: 150px 1fr;
     align-items: center;
     gap: 2rem;
     padding: 1rem;
@@ -54,18 +54,17 @@ header nav a:hover {
     transform: translateY(-2px);
 }
 
-/* --- Hero Section Improvements --- */
 .hero {
     position: relative;
-    max-height: 450px; /* Control the height of the hero section */
-    overflow: hidden; /* Hide parts of the image that overflow */
+    max-height: 450px;
+    overflow: hidden;
 }
 
 .hero img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the area without distortion */
+    object-fit: cover;
 }
 
 .hero h1 {
@@ -84,21 +83,25 @@ header nav a:hover {
     bottom: 2rem;
     right: 2rem;
     width: 45%;
-    background-color: rgba(246, 174, 45, 0.95); /* Made slightly more opaque */
+    background-color: rgba(246, 174, 45, 0.95);
     padding: 1.5rem;
     border-radius: 8px;
     color: var(--text-dark);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    /* Flexbox styles to fix the layout */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .hero article img {
-    float: right;
+    /* The float is no longer needed */
     width: 100px;
     height: 100px;
     object-fit: cover;
-    margin-left: 1rem;
     border-radius: 50%;
     border: 3px solid var(--primary-color);
+    flex-shrink: 0; /* Prevents the image from shrinking */
 }
 
 .history {
@@ -112,7 +115,6 @@ header nav a:hover {
     line-height: 1.7;
 }
 
-/* --- Adventure Gallery Improvements --- */
 .adventure {
     padding: 2rem;
 }
@@ -131,7 +133,7 @@ header nav a:hover {
 .adventure-gallery img {
     width: 100%;
     height: 250px;
-    object-fit: cover; /* This makes all images uniform */
+    object-fit: cover;
     border: 3px solid var(--secondary-color);
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -169,9 +171,9 @@ footer {
 .sociallinks img {
     width: 32px;
     height: auto;
+    filter: invert(1);
 }
 
-/* --- Responsive Design --- */
 @media (max-width: 800px) {
     .hero article {
         width: 60%;
@@ -206,11 +208,11 @@ footer {
     }
 
     .hero {
-        max-height: none; /* Allow hero to grow on mobile */
+        max-height: none;
     }
 
     .hero h1, .hero article {
-        position: static; /* Remove absolute positioning */
+        position: static;
         width: auto;
         margin: 0;
         border-radius: 0;
