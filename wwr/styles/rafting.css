@@ -1,5 +1,7 @@
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Halant:wght@600&family=Nunito+Sans:wght@400;700&display=swap');
 
+/* Define CSS variables for consistent theming */
 :root {
     --primary-color: #33658A;
     --secondary-color: #86BBD8;
@@ -11,6 +13,7 @@
     --text-dark: #333;
 }
 
+/* General body styling */
 body {
     font-family: var(--paragraph-font);
     max-width: 1200px;
@@ -18,11 +21,13 @@ body {
     background-color: var(--text-light);
 }
 
+/* Heading styles */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     color: var(--primary-color);
 }
 
+/* Header layout using CSS Grid */
 header {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -32,6 +37,12 @@ header {
     background-color: var(--secondary-color);
 }
 
+header img {
+    width: 100%;
+    height: auto;
+}
+
+/* Navigation layout using Flexbox */
 header nav {
     display: flex;
     justify-content: flex-end;
@@ -54,6 +65,7 @@ header nav a:hover {
     transform: translateY(-2px);
 }
 
+/* Hero section styling */
 .hero {
     position: relative;
     max-height: 450px;
@@ -91,8 +103,8 @@ header nav a:hover {
 }
 
 .hero article img {
-    float: right; /* Reverted to float to meet rubric requirements */
-    margin-left: 1rem; /* Added margin for spacing */
+    float: right;
+    margin-left: 1rem;
     width: 100px;
     height: 100px;
     object-fit: cover;
@@ -100,17 +112,37 @@ header nav a:hover {
     border: 3px solid var(--primary-color);
 }
 
+/* History section styling */
 .history {
     padding: 3rem 2rem;
+}
+
+.history h2 {
     text-align: center;
+    margin-bottom: 2rem;
 }
 
-.history p {
-    max-width: 800px;
-    margin: 0 auto;
+/* Layout for history content to match wireframe */
+.history-layout {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.history-layout img {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 5px;
+    border: 3px solid var(--secondary-color);
+}
+
+.history-layout p {
     line-height: 1.7;
+    margin: 0;
 }
 
+/* Adventure section styling */
 .adventure {
     padding: 2rem;
 }
@@ -122,24 +154,43 @@ header nav a:hover {
 
 .adventure-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.adventure-gallery figure {
+    margin: 0;
+    border: 3px solid var(--secondary-color);
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.adventure-gallery figure:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
 
 .adventure-gallery img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border: 3px solid var(--secondary-color);
-    border-radius: 5px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
 }
 
-.adventure-gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+.adventure-gallery figcaption {
+    text-align: center;
+    padding: 1rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: var(--heading-font);
 }
 
+
+/* Footer layout */
 footer {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -167,8 +218,9 @@ footer {
 .sociallinks img {
     width: 32px;
     height: auto;
-    filter: invert(1);
 }
+
+/* --- Media Queries for Responsiveness --- */
 
 @media (max-width: 800px) {
     .hero article {
@@ -181,6 +233,16 @@ footer {
     .hero article img {
         width: 80px;
         height: 80px;
+    }
+
+    /* History layout for tablets */
+    .history-layout {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1.5rem;
+    }
+    .history-layout p {
+        text-align: center;
     }
 
     footer {
@@ -205,6 +267,7 @@ footer {
 
     .hero {
         max-height: none;
+        overflow: visible;
     }
 
     .hero h1, .hero article {
@@ -212,13 +275,17 @@ footer {
         width: auto;
         margin: 0;
         border-radius: 0;
-    }
-
-    .hero h1 {
+        box-shadow: none;
         text-align: center;
     }
-
+    
     .hero article {
-        box-shadow: none;
+        padding: 1rem;
+    }
+
+    .hero article img {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem auto;
     }
 }

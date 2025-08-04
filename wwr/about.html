@@ -9,11 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Halant:wght@600&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/rafting.css">
+    <!-- Link to the updated CSS file -->
+    <link rel="stylesheet" href="styles/rafting-updated.css">
 </head>
 <body>
     <header>
-        <img src="images/downriver.png" alt="High Ground Odyssey Logo" width="150">
+        <img src="images/downriver.png" alt="High Ground Odyssey Logo">
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
@@ -34,17 +35,38 @@
 
         <section class="history">
             <h2>History</h2>
-            <p>Founded in 2005 by a group of passionate river guides, High Ground Odyssey started as a small operation with a big dream: to share the unparalleled joy of whitewater rafting. Over the years, we've grown into a premier adventure company, but our core values of safety, fun, and respect for the environment have remained unchanged. We've guided thousands of guests down breathtaking rivers and continue to be a leader in the outdoor adventure industry.</p>
+            <!-- This structure is updated to match the wireframe's 3-column layout -->
+            <div class="history-layout">
+                <p>Founded in 2005 by a group of passionate river guides, High Ground Odyssey started as a small operation with a big dream: to share the unparalleled joy of whitewater rafting. Over the years, we've grown into a premier adventure company, but our core values of safety, fun, and respect for the environment have remained unchanged.</p>
+                <!-- Using a local path for the history image -->
+                <img src="images/history-rafting.jpg" alt="A central image illustrating the company's history.">
+                <p>We've guided thousands of guests down breathtaking rivers and continue to be a leader in the outdoor adventure industry, always pushing the boundaries of adventure while maintaining the highest safety standards. Our journey is one of passion, perseverance, and the pursuit of the ultimate river experience.</p>
+            </div>
         </section>
 
         <section class="adventure">
             <h2>Adventure Awaits You!</h2>
             <div class="adventure-gallery">
-                <img src="images/adventure-1.jpg" alt="A team of rafters navigating intense whitewater rapids.">
-                <img src="images/adventure-2.jpg" alt="Kayaks resting on the shore of a crystal clear turquoise river.">
-                <img src="images/adventure-3.jpg" alt="A group of happy friends giving a thumbs-up while on a raft.">
-                <img src="images/adventure-4.jpg" alt="An action shot of a raft splashing through a large wave.">
-                <img src="images/adventure-5.jpg" alt="A stunning, wide-angle view of a river cutting through a mountain valley.">
+                <figure>
+                    <img src="images/adventure-1.jpg" alt="A team of rafters navigating intense whitewater rapids.">
+                    <figcaption>Navigating the Rapids</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure-2.jpg" alt="Kayaks resting on the shore of a crystal clear turquoise river.">
+                    <figcaption>Quiet River Bend</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure-3.jpg" alt="A group of happy friends giving a thumbs-up while on a raft.">
+                    <figcaption>Teamwork and Fun</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure-4.jpg" alt="An action shot of a raft splashing through a large wave.">
+                    <figcaption>Making a Splash</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure-5.jpg" alt="A stunning, wide-angle view of a river cutting through a mountain valley.">
+                    <figcaption>Mountain Valley Vistas</figcaption>
+                </figure>
             </div>
         </section>
     </main>
